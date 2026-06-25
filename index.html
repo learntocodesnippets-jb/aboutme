@@ -45,20 +45,20 @@
 }
 [data-theme="dark"]{
   --bg:#0b0917;
-  --bg2:#110e20;
-  --bg3:#181430;
-  --border:#221d3a;
-  --border2:#332c54;
-  --text:#ede8ff;
-  --text2:#b8aee0;
-  --muted:#7a6e9a;
-  --purple:#a88ee8;
-  --purple-light:#c4aff5;
-  --purple-xlight:#1e1838;
-  --gold:#d4a820;
-  --gold-light:#f0c840;
-  --gold-bg:#1a1508;
-  --gold-border:#4a3808;
+  --bg2:#13102a;
+  --bg3:#1c1838;
+  --border:#2e2850;
+  --border2:#4a4278;
+  --text:#f0ecff;
+  --text2:#c8bef0;
+  --muted:#9d92c0;
+  --purple:#b8a0f0;
+  --purple-light:#d0bcff;
+  --purple-xlight:#2a2448;
+  --gold:#e8bb30;
+  --gold-light:#f5d050;
+  --gold-bg:#251d08;
+  --gold-border:#6a5010;
   --sb-bg:#080710;
   --sb-text:#ede8ff;
   --sb-muted:#5a5470;
@@ -103,17 +103,18 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 .sb-role{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--sb-muted);line-height:1.5;}
 
 .sb-nav{padding:1.25rem 1rem;flex:1;overflow-y:auto;}
-.nav-label{font-size:9px;font-weight:500;color:var(--sb-muted);letter-spacing:0.12em;text-transform:uppercase;padding:0 0.5rem;margin-bottom:6px;}
+.nav-label{font-size:9px;font-weight:600;color:var(--sb-active);letter-spacing:0.12em;text-transform:uppercase;padding:0 0.5rem;margin-bottom:6px;}
 .nav-sep{margin:12px 0;border:none;border-top:1px solid var(--sb-border);}
 .nav-btn{
   display:flex;align-items:center;gap:10px;width:100%;
   padding:8px 12px;border-radius:6px;
-  font-size:13px;font-family:'Inter',sans-serif;
-  color:var(--sb-muted);background:none;border:none;cursor:pointer;
+  font-size:13px;font-family:'Inter',sans-serif;font-weight:500;
+  color:var(--sb-text);background:none;border:none;cursor:pointer;
   text-align:left;transition:all 0.15s;
+  opacity:0.72;
 }
-.nav-btn:hover{background:var(--sb-hover);color:var(--sb-text);}
-.nav-btn.active{background:var(--sb-active-bg);color:var(--sb-active);}
+.nav-btn:hover{background:var(--sb-hover);color:var(--sb-text);opacity:1;}
+.nav-btn.active{background:var(--sb-active-bg);color:var(--sb-active);opacity:1;font-weight:600;}
 .nav-icon{font-size:14px;width:18px;text-align:center;flex-shrink:0;}
 
 .sb-footer{padding:1.25rem 1.5rem;border-top:1px solid var(--sb-border);}
@@ -133,8 +134,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
   border-bottom:1px solid var(--border);
   background:var(--bg);
   position:sticky;top:0;z-index:10;
+  transition:background var(--transition);
 }
-.breadcrumb{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);}
+.breadcrumb{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text2);}
 .breadcrumb .bc-accent{color:var(--purple);}
 .theme-btn{
   display:flex;align-items:center;gap:6px;
@@ -167,7 +169,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 }
 .hero-title .hl{color:var(--purple-light);font-style:italic;}
 .hero-title .hl-gold{color:var(--gold-light);}
-.hero-bio{font-size:15px;font-weight:300;color:var(--muted);max-width:500px;line-height:1.9;margin-bottom:2rem;}
+.hero-bio{font-size:15px;font-weight:300;color:var(--text2);max-width:500px;line-height:1.9;margin-bottom:2rem;}
 
 /* hero illustration panels */
 .hero-panels{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem;}
@@ -220,7 +222,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 .sec-header{margin-bottom:2rem;}
 .sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
 .sec-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--text);margin-bottom:0.5rem;}
-.sec-desc{font-size:14px;color:var(--muted);font-weight:300;}
+.sec-desc{font-size:14px;color:var(--text2);font-weight:300;}
 
 /* ── DIVIDER ── */
 .divider{height:1px;background:var(--border);margin:2.5rem 0;}
@@ -230,11 +232,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 .post-row{
   display:grid;grid-template-columns:100px 1fr;gap:1rem;align-items:start;
   padding:1rem 0;border-bottom:1px solid var(--border);cursor:pointer;
+  background:transparent;
 }
 .post-row:hover .post-title{color:var(--purple);}
-.post-date{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);padding-top:3px;}
-.post-right{display:flex;flex-direction:column;gap:5px;}
-.post-title{font-size:15px;font-weight:500;color:var(--text);transition:color 0.15s;line-height:1.4;}
+.post-date{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);padding-top:3px;white-space:nowrap;}
+.post-right{display:flex;flex-direction:column;gap:5px;align-items:flex-start;}
+.post-title{font-size:15px;font-weight:500;color:var(--text);transition:color 0.15s;line-height:1.4;display:block;}
 .post-tag{
   display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;
   padding:2px 8px;border-radius:3px;
@@ -319,7 +322,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 <body>
 
 <div class="mob-header">
-  <span class="mob-brand">Joshna Bhonsle</span>
+  <span class="mob-brand">Joshna</span>
   <button class="mob-ham" onclick="toggleMob()" aria-label="Menu">&#9776;</button>
 </div>
 <div class="mob-menu" id="mobMenu">
@@ -327,7 +330,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
   <button class="nav-btn active" onclick="nav('home');toggleMob()"><span class="nav-icon">&#8962;</span>Home</button>
   <button class="nav-btn" onclick="nav('programming');toggleMob()"><span class="nav-icon">&#10100;</span>Programming</button>
   <button class="nav-btn" onclick="nav('bible');toggleMob()"><span class="nav-icon">&#10022;</span>Bible study</button>
-  <button class="nav-btn" onclick="nav('misc');toggleMob()"><span class="nav-icon">&#9782;</span>Miscellaneous</button>
+  <button class="nav-btn" onclick="nav('misc');toggleMob()"><span class="nav-icon">&#9782;</span>Everything else</button>
   <hr class="nav-sep"/>
   <button class="nav-btn" onclick="nav('about');toggleMob()"><span class="nav-icon">&#9737;</span>About me</button>
 </div>
@@ -338,7 +341,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
     <div class="sb-avatar" style="background:transparent;border:2px solid var(--sb-active);padding:0;overflow:hidden;">
 <img src="data:image/jpeg;base64,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" alt="Joshna Bhonsle" style="width:100%;height:100%;object-fit:cover;border-radius:50%;filter:brightness(1.05);" />
 </div>
-    <div class="sb-name">Joshna Bhonsle</div>
+    <div class="sb-name">Joshna</div>
     
   </div>
   <div class="sb-nav">
@@ -346,7 +349,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
     <button class="nav-btn active" id="nav-home" onclick="nav('home')"><span class="nav-icon">&#8962;</span>Home</button>
     <button class="nav-btn" id="nav-programming" onclick="nav('programming')"><span class="nav-icon">&#10100;</span>Programming</button>
     <button class="nav-btn" id="nav-bible" onclick="nav('bible')"><span class="nav-icon">&#10022;</span>Bible study</button>
-    <button class="nav-btn" id="nav-misc" onclick="nav('misc')"><span class="nav-icon">&#9782;</span>Miscellaneous</button>
+    <button class="nav-btn" id="nav-misc" onclick="nav('misc')"><span class="nav-icon">&#9782;</span>Everything else</button>
     <hr class="nav-sep"/>
     <div class="nav-label">Links</div>
     <button class="nav-btn" id="nav-about" onclick="nav('about')"><span class="nav-icon">&#9737;</span>About me</button>
@@ -365,8 +368,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
   <div class="topbar">
     <div class="breadcrumb"><span class="bc-accent">~/</span><span id="bc-text">home</span></div>
     <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
-      <span id="th-icon">&#9788;</span>
-      <span id="th-label">Let there be light</span>
+      <span id="th-icon">&#9790;</span>
+      <span id="th-label">Let there be dark</span>
     </button>
   </div>
 
@@ -458,26 +461,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
     <div class="section" id="section-misc">
       <div class="section-banner banner-misc">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem;">Everything else</div>
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--text2);font-style:italic;">"Everything Has Its Time
-3 For everything there is a season, and a time for every matter under heaven:
-2 a time to be born, and a time to die;
-a time to plant, and a time to pluck up what is planted;
-3 a time to kill, and a time to heal;
-a time to break down, and a time to build up;
-4 a time to weep, and a time to laugh;
-a time to mourn, and a time to dance;
-5 a time to throw away stones, and a time to gather stones together;
-a time to embrace, and a time to refrain from embracing;
-6 a time to seek, and a time to lose;
-a time to keep, and a time to throw away;
-7 a time to tear, and a time to sew;
-a time to keep silence, and a time to speak;
-8 a time to love, and a time to hate;
-a time for war, and a time for peace."</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-top:0.5rem;">— Ecclesiastes 3: 1 - 8</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--text2);font-style:italic;">"The more I learn, the more I realize how much I don't know."</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-top:0.5rem;">— Albert Einstein</div>
       </div>
       <div class="sec-header">
-        <div class="sec-kicker">Miscellaneous</div>
+        <div class="sec-kicker">Everything else</div>
         <div class="sec-title">Everything else</div>
         <div class="sec-desc">Books, research, ideas, and learnings that don't fit neatly elsewhere.</div>
       </div>
@@ -663,8 +651,8 @@ function toggleTheme(){
   const h=document.documentElement;
   const dark=h.getAttribute('data-theme')==='dark';
   h.setAttribute('data-theme',dark?'light':'dark');
-  document.getElementById('th-icon').textContent=dark?'\u2600':'\u263D';
-  document.getElementById('th-label').textContent=dark?'Let there be light':'Let there be dark';
+  document.getElementById('th-icon').textContent=dark?'\u263D':'\u2600';
+  document.getElementById('th-label').textContent=dark?'Let there be dark':'Let there be light';
 }
 
 function row(p,catLabel,sec){
@@ -682,13 +670,13 @@ function init(){
   const all=[
     ...DB.programming.map(p=>({...p,sec:'programming',catLabel:'Programming'})),
     ...DB.bible.map(p=>({...p,sec:'bible',catLabel:'Bible study'})),
-    ...DB.misc.map(p=>({...p,sec:'misc',catLabel:'Miscellaneous'}))
+    ...DB.misc.map(p=>({...p,sec:'misc',catLabel:'Everything else'}))
   ].sort((a,b)=>b.date.localeCompare(a.date));
 
   document.getElementById('home-list').innerHTML=all.slice(0,6).map(p=>row(p,p.catLabel,p.sec)).join('');
   document.getElementById('prog-list').innerHTML=DB.programming.map(p=>row(p,'Programming','programming')).join('');
   document.getElementById('bible-list').innerHTML=DB.bible.map(p=>row(p,'Bible study','bible')).join('');
-  document.getElementById('misc-list').innerHTML=DB.misc.map(p=>row(p,'Miscellaneous','misc')).join('');
+  document.getElementById('misc-list').innerHTML=DB.misc.map(p=>row(p,'Everything else','misc')).join('');
 }
 init();
 </script>
