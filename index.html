@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Joshna Bhonsle</title>
+<title>Joshna</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -333,6 +333,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
   <button class="nav-btn" onclick="nav('misc');toggleMob()"><span class="nav-icon">&#9782;</span>Everything else</button>
   <hr class="nav-sep"/>
   <button class="nav-btn" onclick="nav('about');toggleMob()"><span class="nav-icon">&#9737;</span>About me</button>
+  <button class="nav-btn" onclick="nav('contact');toggleMob()"><span class="nav-icon">&#9993;</span>Contact</button>
 </div>
 
 <div class="layout">
@@ -342,7 +343,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 <img src="data:image/jpeg;base64,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" alt="Joshna Bhonsle" style="width:100%;height:100%;object-fit:cover;border-radius:50%;filter:brightness(1.05);" />
 </div>
     <div class="sb-name">Joshna</div>
-    
+    <div class="sb-role">Scripture · Code · Ideas</div>
   </div>
   <div class="sb-nav">
     <div class="nav-label">Sections</div>
@@ -353,6 +354,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
     <hr class="nav-sep"/>
     <div class="nav-label">Links</div>
     <button class="nav-btn" id="nav-about" onclick="nav('about')"><span class="nav-icon">&#9737;</span>About me</button>
+    <button class="nav-btn" id="nav-contact" onclick="nav('contact')"><span class="nav-icon">&#9993;</span>Contact</button>
   </div>
   <div class="sb-footer">
     <div class="sb-links">
@@ -380,9 +382,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
       <div class="hero">
         <div class="hero-kicker">Joshna Bhonsle</div>
         <h1 class="hero-title">Where <span class="hl">code</span> meets<br/><span class="hl-gold">scripture</span>.</h1>
-        <p class="hero-bio">Software engineer from Pune, India. I write about the code I work with, the scripture I sit with, and the ideas I'm still figuring out. Faith and curiosity, in equal measure.</p>
+        <p class="hero-bio">Scripture first, then code, then whatever else life hands me. I write about passages that make me think, programming things I've learned, and ideas I'm still working through. Faith and curiosity, in equal measure.</p>
 
         <div class="hero-panels">
+          <div class="panel scripture-panel" style="padding:1.75rem;">
+            <div class="scripture-ornament" style="font-size:2.25rem;margin-bottom:0.5rem;">&ldquo;</div>
+            <div class="scripture-text" style="font-size:15px;line-height:1.85;margin-bottom:1rem;">Wisdom is the principal thing; therefore get wisdom: and with all thy getting get understanding.</div>
+            <div class="scripture-ref">PROVERBS 4:7 · KJV</div>
+          </div>
           <div class="panel code-panel">
             <div class="code-panel-header">
               <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
@@ -400,17 +407,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
               <span class="c-line">}</span>
             </div>
           </div>
-          <div class="panel scripture-panel">
-            <div class="scripture-ornament">&ldquo;</div>
-            <div class="scripture-text">Wisdom is the principal thing; therefore get wisdom: and with all thy getting get understanding.</div>
-            <div class="scripture-ref">PROVERBS 4:7</div>
-          </div>
         </div>
 
         <div class="chips">
           <span class="chip">Java</span>
-          <span class="chip">Python</span>
-          <span class="chip">AI / ML</span>
+          <span class="chip">AI</span>
           <span class="chip">Systems design</span>
           <span class="chip">Cognitive science</span>
         </div>
@@ -459,10 +460,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 
     <!-- MISC -->
     <div class="section" id="section-misc">
-      <div class="section-banner banner-misc">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem;">Everything else</div>
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--text2);font-style:italic;">"The more I learn, the more I realize how much I don't know."</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-top:0.5rem;">— Albert Einstein</div>
+      <div class="section-banner banner-bible" style="margin-bottom:2rem;">
+        <div class="scripture-ornament" style="font-size:2rem;margin-bottom:0.75rem;">&ldquo;</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:15px;line-height:1.85;color:var(--text2);margin-bottom:0.75rem;">For everything there is a season, and a time for every matter under heaven: a time to be born, and a time to die; a time to plant, and a time to pluck up what is planted...</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.08em;">ECCLESIASTES 3:1–8</div>
+          <a href="https://www.biblegateway.com/passage/?search=Ecclesiastes%203&version=NRSVA" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);opacity:0.7;text-decoration:none;border-bottom:1px solid var(--gold-border);">Read full passage ↗</a>
+        </div>
       </div>
       <div class="sec-header">
         <div class="sec-kicker">Everything else</div>
@@ -490,11 +494,49 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
         </div>
         <div class="about-body">
           <p>I'm a software engineer based in Pune, India, with a background in Java and Python, and a growing interest in AI, machine learning, and cognitive science — particularly how people form and revise beliefs.</p>
-          <p>This site is where I document programming learnings, post opinions on software practices, reflect on scripture, and occasionally write about books or research I found worthwhile.</p>
-          <p>Outside of code, I read the Bible and think about how faith and intellectual curiosity intersect. I believe good engineering and honest inquiry share the same root: a willingness to keep learning.</p>
+          <p>Scripture comes first on this site. I read the Bible regularly and write reflections on passages that make me think — about meaning, timing, and how faith and intellectual curiosity go hand in hand. Then comes code: programming learnings, opinions on software practices, and the occasional book note.</p>
+          <p>I believe good engineering and honest inquiry share the same root: a willingness to be wrong.</p>
+          <div style="margin-top:1.75rem;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.25rem;">&#9822; Challenge me</div>
+            <div style="font-size:14px;color:var(--text2);margin-bottom:1.25rem;line-height:1.6;">I love <strong style="color:var(--text);">Ultimate Tic Tac Toe</strong> — a 3×3 grid of mini boards where every move sends your opponent somewhere specific. Try it below (you're <strong style="color:#60a5fa;">X</strong>, I'm <strong style="color:#f87171;">O</strong>). Want a real match? Hit Contact.</div>
+            <div id="uttt-wrap"></div>
+          </div>
         </div>
         <div class="edit-note">
           <span class="en-key">GitHub:</span> open index.html and update <code style="font-size:10px;background:none;padding:0;color:var(--purple);">#github-link</code> href
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section" id="section-contact">
+      <div class="sec-header">
+        <div class="sec-kicker">Contact</div>
+        <div class="sec-title">Send a message</div>
+        <div class="sec-desc">Got a thought, a question, or want to play Ultimate Tic Tac Toe? I read everything.</div>
+      </div>
+      <div id="contact-form-wrap" style="max-width:520px;">
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div>
+            <label style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px;">Your name</label>
+            <input id="cf-name" type="text" placeholder="Name" style="width:100%;padding:10px 14px;border-radius:6px;border:1px solid var(--border2);background:var(--bg2);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color 0.15s;" onfocus="this.style.borderColor='var(--purple)'" onblur="this.style.borderColor='var(--border2)'" />
+          </div>
+          <div>
+            <label style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px;">Your email</label>
+            <input id="cf-email" type="email" placeholder="you@example.com" style="width:100%;padding:10px 14px;border-radius:6px;border:1px solid var(--border2);background:var(--bg2);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color 0.15s;" onfocus="this.style.borderColor='var(--purple)'" onblur="this.style.borderColor='var(--border2)'" />
+          </div>
+          <div>
+            <label style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px;">Subject</label>
+            <input id="cf-subject" type="text" placeholder="What's on your mind?" style="width:100%;padding:10px 14px;border-radius:6px;border:1px solid var(--border2);background:var(--bg2);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color 0.15s;" onfocus="this.style.borderColor='var(--purple)'" onblur="this.style.borderColor='var(--border2)'" />
+          </div>
+          <div>
+            <label style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px;">Message</label>
+            <textarea id="cf-message" rows="6" placeholder="Say hello, share a thought, or challenge me to a game..." style="width:100%;padding:10px 14px;border-radius:6px;border:1px solid var(--border2);background:var(--bg2);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;resize:vertical;transition:border-color 0.15s;line-height:1.7;" onfocus="this.style.borderColor='var(--purple)'" onblur="this.style.borderColor='var(--border2)'"></textarea>
+          </div>
+          <div>
+            <button onclick="sendMessage()" id="cf-btn" style="padding:11px 28px;border-radius:6px;border:none;background:var(--purple);color:#ffffff;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;cursor:pointer;transition:opacity 0.15s;letter-spacing:0.03em;">Send message</button>
+          </div>
+          <div id="cf-status" style="display:none;font-family:'IBM Plex Mono',monospace;font-size:12px;padding:10px 14px;border-radius:6px;"></div>
         </div>
       </div>
     </div>
@@ -627,7 +669,7 @@ function nav(sec){
   if(el) el.classList.add('active');
   const nb=document.getElementById('nav-'+sec);
   if(nb) nb.classList.add('active');
-  const labels={home:'home',programming:'programming',bible:'bible study',misc:'miscellaneous',about:'about'};
+  const labels={home:'home',programming:'programming',bible:'bible study',misc:'everything else',about:'about',contact:'contact'};
   document.getElementById('bc-text').textContent=labels[sec]||sec;
   window.scrollTo(0,0);
 }
@@ -666,6 +708,63 @@ function row(p,catLabel,sec){
   </div>`;
 }
 
+function sendMessage(){
+  const name = document.getElementById('cf-name').value.trim();
+  const email = document.getElementById('cf-email').value.trim();
+  const subject = document.getElementById('cf-subject').value.trim();
+  const message = document.getElementById('cf-message').value.trim();
+  const status = document.getElementById('cf-status');
+  const btn = document.getElementById('cf-btn');
+
+  if(!name || !email || !message){
+    status.style.display='block';
+    status.style.background='var(--gold-bg)';
+    status.style.border='1px solid var(--gold-border)';
+    status.style.color='var(--gold)';
+    status.textContent='Please fill in your name, email, and message.';
+    return;
+  }
+
+  btn.textContent='Sending...';
+  btn.style.opacity='0.6';
+  btn.disabled=true;
+
+  // Use Formspree to forward to email without exposing address
+  fetch('https://formspree.io/f/xvgrdlkg', {
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name,email,subject,message})
+  })
+  .then(r=>r.json())
+  .then(data=>{
+    if(data.ok){
+      status.style.display='block';
+      status.style.background='#0a1f0a';
+      status.style.border='1px solid #1a4a1a';
+      status.style.color='#6ee7b7';
+      status.textContent='Message sent! I\'ll get back to you soon.';
+      document.getElementById('cf-name').value='';
+      document.getElementById('cf-email').value='';
+      document.getElementById('cf-subject').value='';
+      document.getElementById('cf-message').value='';
+    } else {
+      throw new Error('Send failed');
+    }
+  })
+  .catch(()=>{
+    status.style.display='block';
+    status.style.background='var(--gold-bg)';
+    status.style.border='1px solid var(--gold-border)';
+    status.style.color='var(--gold)';
+    status.textContent='Something went wrong. Try emailing me directly via LinkedIn.';
+  })
+  .finally(()=>{
+    btn.textContent='Send message';
+    btn.style.opacity='1';
+    btn.disabled=false;
+  });
+}
+
 function init(){
   const all=[
     ...DB.programming.map(p=>({...p,sec:'programming',catLabel:'Programming'})),
@@ -680,6 +779,299 @@ function init(){
 }
 init();
 </script>
+
+<script id="uttt-engine">
+(function(){
+  // ── State ──
+  const EMPTY=0,X=1,O=2;
+  let bigBoard   = Array(9).fill(EMPTY);   // winner of each mini board
+  let cells      = Array.from({length:9},()=>Array(9).fill(EMPTY));
+  let current    = X;                       // X = human, O = AI
+  let activeBoard= -1;                      // -1 = any board allowed
+  let gameOver   = false;
+  let thinking   = false;
+
+  // ── Helpers ──
+  const wins=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  function checkWinner(b){
+    for(const[a,c,d]of wins) if(b[a]&&b[a]===b[c]&&b[a]===b[d]) return b[a];
+    if(b.every(v=>v!==EMPTY)) return -1; // draw
+    return 0;
+  }
+  function boardPlayable(bi){ return bigBoard[bi]===EMPTY; }
+  function cellPlayable(bi,ci){
+    return boardPlayable(bi) && cells[bi][ci]===EMPTY && bigBoard[bi]===EMPTY;
+  }
+
+  // ── AI (minimax depth-limited) ──
+  function aiMove(){
+    // Get valid boards
+    const boards = activeBoard===-1
+      ? [...Array(9).keys()].filter(i=>boardPlayable(i))
+      : (boardPlayable(activeBoard)?[activeBoard]:[...Array(9).keys()].filter(i=>boardPlayable(i)));
+    
+    let bestScore=-Infinity, bestBi=-1, bestCi=-1;
+    for(const bi of boards){
+      for(let ci=0;ci<9;ci++){
+        if(cells[bi][ci]!==EMPTY) continue;
+        cells[bi][ci]=O;
+        const prevBig=bigBoard[bi];
+        const w=checkWinner(cells[bi]);
+        if(w===O) bigBoard[bi]=O;
+        else if(w===-1) bigBoard[bi]=-1;
+        let score=minimax(3,false,bi,ci,-Infinity,Infinity);
+        cells[bi][ci]=EMPTY; bigBoard[bi]=prevBig;
+        // Prioritise winning big board
+        if(w===O) score+=500;
+        if(score>bestScore){bestScore=score;bestBi=bi;bestCi=ci;}
+      }
+    }
+    return {bi:bestBi,ci:bestCi};
+  }
+
+  function evalBig(){
+    let s=0;
+    const w=checkWinner(bigBoard.map(v=>v===-1?0:v));
+    if(w===O) s+=10000;
+    if(w===X) s-=10000;
+    // Count controlled mini boards
+    for(let i=0;i<9;i++){
+      if(bigBoard[i]===O) s+=100;
+      if(bigBoard[i]===X) s-=100;
+    }
+    return s;
+  }
+
+  function minimax(depth,isMax,lastBi,lastCi,alpha,beta){
+    const globalW=checkWinner(bigBoard.map(v=>v===-1?0:v));
+    if(globalW===O) return 10000+depth;
+    if(globalW===X) return -10000-depth;
+    if(depth===0) return evalBig();
+    const nextBoards = (bigBoard[lastCi]===EMPTY)
+      ? [lastCi]
+      : [...Array(9).keys()].filter(i=>boardPlayable(i));
+    if(!nextBoards.length) return evalBig();
+
+    if(isMax){
+      let best=-Infinity;
+      outer: for(const bi of nextBoards){
+        for(let ci=0;ci<9;ci++){
+          if(cells[bi][ci]!==EMPTY||bigBoard[bi]!==EMPTY) continue;
+          cells[bi][ci]=O;
+          const prev=bigBoard[bi];
+          const w=checkWinner(cells[bi]);
+          if(w===O) bigBoard[bi]=O; else if(w===-1) bigBoard[bi]=-1;
+          const s=minimax(depth-1,false,bi,ci,alpha,beta);
+          cells[bi][ci]=EMPTY; bigBoard[bi]=prev;
+          best=Math.max(best,s); alpha=Math.max(alpha,s);
+          if(beta<=alpha) break outer;
+        }
+      }
+      return best===-Infinity?0:best;
+    } else {
+      let best=Infinity;
+      outer: for(const bi of nextBoards){
+        for(let ci=0;ci<9;ci++){
+          if(cells[bi][ci]!==EMPTY||bigBoard[bi]!==EMPTY) continue;
+          cells[bi][ci]=X;
+          const prev=bigBoard[bi];
+          const w=checkWinner(cells[bi]);
+          if(w===X) bigBoard[bi]=X; else if(w===-1) bigBoard[bi]=-1;
+          const s=minimax(depth-1,true,bi,ci,alpha,beta);
+          cells[bi][ci]=EMPTY; bigBoard[bi]=prev;
+          best=Math.min(best,s); beta=Math.min(beta,s);
+          if(beta<=alpha) break outer;
+        }
+      }
+      return best===Infinity?0:best;
+    }
+  }
+
+  // ── Render ──
+  function playerColor(p){ return p===X?'#60a5fa':p===O?'#f87171':''; }
+  function playerLabel(p){ return p===X?'X':'O'; }
+
+  function render(){
+    const wrap=document.getElementById('uttt-wrap');
+    if(!wrap) return;
+
+    const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+    const bgMain   = isDark?'#0f0d1a':'#fdfcff';
+    const bgBoard  = isDark?'#13102a':'#f7f4ff';
+    const bgActive = isDark?'#1e1c38':'#edeafc';
+    const borderC  = isDark?'#2e2850':'#ddd8f0';
+    const borderActive='#7c5cbf';
+    const textC    = isDark?'#ede8ff':'#0d0a18';
+    const mutedC   = isDark?'#9d92c0':'#7a6e9a';
+    const cellHover= isDark?'#2a2448':'#e8e4f8';
+    const wonX     ='rgba(96,165,250,0.15)';
+    const wonO     ='rgba(248,113,113,0.15)';
+    const wonDraw  = isDark?'#1a1a2a':'#f0eef8';
+
+    const globalWinner=checkWinner(bigBoard.map(v=>v===-1?0:v));
+
+    let statusText='';
+    if(globalWinner===X) statusText='<span style="color:#60a5fa;font-weight:600;">You win! 🎉</span>';
+    else if(globalWinner===O) statusText='<span style="color:#f87171;font-weight:600;">AI wins!</span>';
+    else if(globalWinner===-1) statusText='<span style="color:'+mutedC+';">Draw!</span>';
+    else if(thinking) statusText='<span style="color:'+mutedC+';">AI is thinking...</span>';
+    else if(current===X){
+      const ab=activeBoard===-1||!boardPlayable(activeBoard)?'any open board':'board '+(activeBoard+1);
+      statusText='<span style="color:#60a5fa;">Your turn (X)</span> <span style="color:'+mutedC+';font-size:11px;">→ play on '+ab+'</span>';
+    } else {
+      statusText='<span style="color:'+mutedC+';">AI\'s turn (O)...</span>';
+    }
+
+    let boardsHTML='';
+    for(let bi=0;bi<9;bi++){
+      const row=Math.floor(bi/3), col=bi%3;
+      const isActive=!gameOver&&current===X&&!thinking&&(activeBoard===-1||activeBoard===bi)&&boardPlayable(bi);
+      const bw=bigBoard[bi];
+      let boardBg=isActive?bgActive:bgBoard;
+      if(bw===X) boardBg=wonX;
+      else if(bw===O) boardBg=wonO;
+      else if(bw===-1) boardBg=wonDraw;
+
+      let cellsHTML='';
+      if(bw!==EMPTY){
+        // Show big winner symbol
+        const sym = bw===-1?'·':playerLabel(bw);
+        const col2 = bw===X?'#60a5fa':bw===O?'#f87171':mutedC;
+        cellsHTML=`<div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:${col2};opacity:0.85;">${sym}</div>`;
+      } else {
+        for(let ci=0;ci<9;ci++){
+          const cv=cells[bi][ci];
+          const cRow=Math.floor(ci/3),cCol=ci%3;
+          const borderR=cRow<2?'border-bottom:1.5px solid '+borderC+';':'';
+          const borderB=cCol<2?'border-right:1.5px solid '+borderC+';':'';
+          const canClick=isActive&&cv===EMPTY;
+          const sym=cv?`<span style="color:${playerColor(cv)};font-weight:700;font-size:13px;">${playerLabel(cv)}</span>`:'';
+          cellsHTML+=`<div onclick="${canClick?'utttClick('+bi+','+ci+')':''}" 
+            style="display:flex;align-items:center;justify-content:center;
+            ${borderR}${borderB}
+            cursor:${canClick?'pointer':'default'};
+            border-radius:2px;
+            transition:background 0.1s;
+            font-family:'IBM Plex Mono',monospace;"
+            onmouseover="${canClick?'this.style.background=\''+cellHover+'\'':''}"
+            onmouseout="this.style.background=''"
+          >${sym}</div>`;
+        }
+      }
+
+      const borderStyle=isActive?`2px solid ${borderActive}`:`1px solid ${borderC}`;
+      boardsHTML+=`<div style="
+        background:${boardBg};
+        border:${borderStyle};
+        border-radius:6px;
+        padding:4px;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        grid-template-rows:repeat(3,1fr);
+        aspect-ratio:1;
+        transition:border-color 0.2s,background 0.2s;
+        box-shadow:${isActive?'0 0 0 3px rgba(124,92,191,0.15)':'none'};
+      ">${cellsHTML}</div>`;
+    }
+
+    wrap.innerHTML=`
+      <div style="font-family:'Inter',sans-serif;">
+        <div style="
+          display:inline-flex;align-items:center;gap:8px;
+          font-family:'IBM Plex Mono',monospace;font-size:12px;
+          margin-bottom:10px;
+          color:${mutedC};
+        ">${statusText}</div>
+        <div style="
+          display:grid;
+          grid-template-columns:repeat(3,1fr);
+          grid-template-rows:repeat(3,1fr);
+          gap:6px;
+          max-width:380px;
+          background:${bgMain};
+          border:1px solid ${borderC};
+          border-radius:10px;
+          padding:10px;
+        ">${boardsHTML}</div>
+        <button onclick="utttReset()" style="
+          margin-top:10px;
+          padding:6px 16px;
+          font-family:'IBM Plex Mono',monospace;font-size:11px;
+          border:1px solid ${borderC};border-radius:5px;
+          background:transparent;color:${mutedC};cursor:pointer;
+          transition:all 0.15s;letter-spacing:0.04em;
+        " onmouseover="this.style.borderColor='#7c5cbf';this.style.color='#7c5cbf'"
+           onmouseout="this.style.borderColor='${borderC}';this.style.color='${mutedC}'">↺ New game</button>
+      </div>`;
+  }
+
+  // ── Click handler ──
+  window.utttClick=function(bi,ci){
+    if(gameOver||current!==X||thinking) return;
+    if(!cellPlayable(bi,ci)) return;
+    if(activeBoard!==-1&&activeBoard!==bi&&boardPlayable(activeBoard)) return;
+
+    cells[bi][ci]=X;
+    const w=checkWinner(cells[bi]);
+    if(w===X) bigBoard[bi]=X;
+    else if(w===-1) bigBoard[bi]=-1;
+
+    activeBoard=boardPlayable(ci)?ci:-1;
+    current=O;
+    render();
+
+    const gw=checkWinner(bigBoard.map(v=>v===-1?0:v));
+    if(gw){ gameOver=true; render(); return; }
+
+    // AI move after short delay
+    thinking=true;
+    render();
+    setTimeout(()=>{
+      const mv=aiMove();
+      if(mv.bi!==-1){
+        cells[mv.bi][mv.ci]=O;
+        const ow=checkWinner(cells[mv.bi]);
+        if(ow===O) bigBoard[mv.bi]=O;
+        else if(ow===-1) bigBoard[mv.bi]=-1;
+        activeBoard=boardPlayable(mv.ci)?mv.ci:-1;
+      }
+      current=X; thinking=false;
+      const gw2=checkWinner(bigBoard.map(v=>v===-1?0:v));
+      if(gw2) gameOver=true;
+      render();
+    },350);
+  };
+
+  window.utttReset=function(){
+    bigBoard=Array(9).fill(EMPTY);
+    cells=Array.from({length:9},()=>Array(9).fill(EMPTY));
+    current=X; activeBoard=-1; gameOver=false; thinking=false;
+    render();
+  };
+
+  // Re-render on theme toggle so colors update
+  const origToggle=window.toggleTheme;
+  window.toggleTheme=function(){
+    origToggle&&origToggle();
+    setTimeout(render,50);
+  };
+
+  // Initial render when about section is shown
+  const origNav=window.nav;
+  window.nav=function(sec){
+    origNav&&origNav(sec);
+    if(sec==='about') setTimeout(render,30);
+  };
+
+  // Also render if about is default active
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',()=>{ if(document.getElementById('section-about')&&document.getElementById('section-about').classList.contains('active')) render(); });
+  } else {
+    if(document.getElementById('section-about')&&document.getElementById('section-about').classList.contains('active')) render();
+  }
+})();
+</script>
+
 </body>
 </html>
 
