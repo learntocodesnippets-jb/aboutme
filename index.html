@@ -266,6 +266,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 .pv-title{font-family:'Playfair Display',serif;font-size:2.25rem;font-weight:700;line-height:1.15;color:var(--text);margin-bottom:0.75rem;}
 .pv-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);padding-bottom:1.5rem;border-bottom:1px solid var(--border);margin-bottom:2rem;}
 .pv-body{font-size:15px;line-height:1.9;color:var(--text);font-weight:300;}
+.experiment-body h2{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--text);margin:2rem 0 0.6rem;}
+.experiment-body p{font-size:15px;line-height:1.9;color:var(--text2);font-weight:300;margin-bottom:1.1rem;}
+.experiment-body em{color:var(--purple-light);font-style:italic;}
+.experiment-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:0.06em;margin-bottom:1.5rem !important;}
+.experiment-note{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);}
 .pv-body h2{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--text);margin:2.25rem 0 0.75rem;}
 .pv-body p{margin-bottom:1.25rem;}
 .pv-body ul,.pv-body ol{margin:0 0 1.25rem 1.5rem;}
@@ -328,10 +333,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 <div class="mob-menu" id="mobMenu">
   <div class="nav-label" style="color:#5a5070;margin-bottom:8px;">Navigate</div>
   <button class="nav-btn active" onclick="nav('home');toggleMob()"><span class="nav-icon">&#8962;</span>Home</button>
-  <button class="nav-btn" onclick="nav('programming');toggleMob()"><span class="nav-icon">&#10100;</span>Programming</button>
   <button class="nav-btn" onclick="nav('bible');toggleMob()"><span class="nav-icon">&#10022;</span>Bible study</button>
+  <button class="nav-btn" onclick="nav('programming');toggleMob()"><span class="nav-icon">&#10100;</span>Programming</button>
+  <button class="nav-btn" onclick="nav('omscs');toggleMob()"><span class="nav-icon">&#127979;</span>OMSCS Reviews</button>
   <button class="nav-btn" onclick="nav('misc');toggleMob()"><span class="nav-icon">&#9782;</span>Everything else</button>
-  <hr class="nav-sep"/>
   <button class="nav-btn" onclick="nav('about');toggleMob()"><span class="nav-icon">&#9737;</span>About me</button>
   <button class="nav-btn" onclick="nav('contact');toggleMob()"><span class="nav-icon">&#9993;</span>Contact</button>
 </div>
@@ -351,6 +356,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
     <button class="nav-btn" id="nav-programming" onclick="nav('programming')"><span class="nav-icon">&#10100;</span>Programming</button>
     <button class="nav-btn" id="nav-bible" onclick="nav('bible')"><span class="nav-icon">&#10022;</span>Bible study</button>
     <button class="nav-btn" id="nav-misc" onclick="nav('misc')"><span class="nav-icon">&#9782;</span>Everything else</button>
+    <button class="nav-btn" id="nav-omscs" onclick="nav('omscs')"><span class="nav-icon">&#127979;</span>OMSCS Reviews</button
     <hr class="nav-sep"/>
     <div class="nav-label">Links</div>
     <button class="nav-btn" id="nav-about" onclick="nav('about')"><span class="nav-icon">&#9737;</span>About me</button>
@@ -411,7 +417,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 
         <div class="chips">
           <span class="chip">Java</span>
-          <span class="chip">AI</span>
+          <span class="chip">Python</span>
+          <span class="chip">AI / ML</span>
           <span class="chip">Systems design</span>
           <span class="chip">Cognitive science</span>
         </div>
@@ -480,6 +487,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
     <div class="section" id="section-about">
       <div class="sec-header">
         <div class="sec-kicker">About</div>
+        <div class="sec-title">Joshna Bhonsle</div>
       </div>
       <div class="about-wrap">
         <div class="about-nameplate">
@@ -488,13 +496,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 </div>
           <div class="about-name-block">
             <div class="an">Joshna Bhonsle</div>
-            <div class="ar">// software engineer · india</div>
+            <div class="ar">// software engineer · pune, india</div>
           </div>
         </div>
         <div class="about-body">
-          <p>I'm a software engineer based in India, with a background in Java, and a growing interest in AI, and cognitive science — particularly how people form and revise beliefs.</p>
+          <p>I'm a software engineer based in Pune, India, with a background in Java and Python, and a growing interest in AI, machine learning, and cognitive science — particularly how people form and revise beliefs.</p>
           <p>Scripture comes first on this site. I read the Bible regularly and write reflections on passages that make me think — about meaning, timing, and how faith and intellectual curiosity go hand in hand. Then comes code: programming learnings, opinions on software practices, and the occasional book note.</p>
-          <p>I believe good engineering and honest inquiry share the same root: a willingness to correct the wrong.</p>
+          <p>I believe good engineering and honest inquiry share the same root: a willingness to be wrong.</p>
           <div style="margin-top:1.75rem;">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.25rem;">&#9822; Challenge me</div>
             <div style="font-size:14px;color:var(--text2);margin-bottom:1.25rem;line-height:1.6;">I love <strong style="color:var(--text);">Ultimate Tic Tac Toe</strong> — a 3×3 grid of mini boards where every move sends your opponent somewhere specific. Try it below (you're <strong style="color:#60a5fa;">X</strong>, I'm <strong style="color:#f87171;">O</strong>). Want a real match? Hit Contact.</div>
@@ -504,6 +512,135 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
         <div class="edit-note">
           <span class="en-key">GitHub:</span> open index.html and update <code style="font-size:10px;background:none;padding:0;color:var(--purple);">#github-link</code> href
         </div>
+      </div>
+    </div>
+
+    <!-- OMSCS -->
+    <div class="section" id="section-omscs">
+      <div class="sec-header">
+        <div class="sec-kicker">Georgia Tech · OMSCS</div>
+        <div class="sec-title">Course reviews</div>
+        <div class="sec-desc">10 courses across systems, AI, security, and cognitive science. Honest takes on what was worth it.</div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.75rem;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;padding:4px 12px;border-radius:4px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);">7 completed</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;padding:4px 12px;border-radius:4px;background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-border);">1 in progress</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;padding:4px 12px;border-radius:4px;background:var(--bg2);color:var(--muted);border:1px solid var(--border);">2 upcoming</span>
+      </div>
+      
+        <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;background:var(--bg2);margin-bottom:1rem;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.07em;margin-bottom:3px;">CS-6675 · Summer 2025</div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--text);">Advanced Internet Computing</div>
+            </div>
+            <div style="flex-shrink:0;"><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--border2);">★</span></div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.75;margin:0.6rem 0 0.75rem;font-weight:300;">Explores distributed systems, cloud computing, and web-scale architectures. Hands-on projects pushed you to think about fault tolerance and scalability in ways that textbooks don't quite capture.</p>
+          <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Distributed Systems</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Cloud</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Networking</span></div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;background:var(--bg2);margin-bottom:1rem;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.07em;margin-bottom:3px;">CS-6603 · Spring 2025</div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--text);">AI, Ethics & Society</div>
+            </div>
+            <div style="flex-shrink:0;"><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span></div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.75;margin:0.6rem 0 0.75rem;font-weight:300;">One of the most thought-provoking courses in the program. Covers bias in ML, fairness metrics, accountability, and the societal implications of AI deployment. Essential reading for anyone building AI systems.</p>
+          <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">AI Ethics</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Policy</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Fairness</span></div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;background:var(--bg2);margin-bottom:1rem;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.07em;margin-bottom:3px;">CS-6400 · Fall 2024</div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--text);">Database Systems Concepts & Design</div>
+            </div>
+            <div style="flex-shrink:0;"><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--border2);">★</span></div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.75;margin:0.6rem 0 0.75rem;font-weight:300;">Solid foundations in relational modeling, SQL, normalization, and query optimization. The semester project — designing a full database system from scratch — was the real learning.</p>
+          <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">SQL</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">ER Modeling</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Optimization</span></div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;background:var(--bg2);margin-bottom:1rem;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.07em;margin-bottom:3px;">CS-6035 · Fall 2025</div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--text);">Intro to Information Security</div>
+            </div>
+            <div style="flex-shrink:0;"><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--border2);">★</span></div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.75;margin:0.6rem 0 0.75rem;font-weight:300;">A broad survey of security fundamentals: cryptography, network security, web vulnerabilities, and malware analysis. The CTF-style labs made abstract concepts very concrete.</p>
+          <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Security</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Cryptography</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">CTF</span></div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;background:var(--bg2);margin-bottom:1rem;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.07em;margin-bottom:3px;">CS-6310 · Fall 2025</div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--text);">Software Architecture & Design</div>
+            </div>
+            <div style="flex-shrink:0;"><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--border2);">★</span></div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.75;margin:0.6rem 0 0.75rem;font-weight:300;">UML, design patterns, architectural styles, and trade-off analysis. More conceptual than coding-heavy, but the ability to reason about system structure at scale is genuinely valuable.</p>
+          <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Architecture</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Design Patterns</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">UML</span></div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;background:var(--bg2);margin-bottom:1rem;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.07em;margin-bottom:3px;">CS-6300 · None</div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--text);">Software Development Process</div>
+            </div>
+            <div style="flex-shrink:0;"><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--gold);">★</span><span style="color:var(--border2);">★</span><span style="color:var(--border2);">★</span></div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.75;margin:0.6rem 0 0.75rem;font-weight:300;">Agile, Scrum, testing strategies, and software quality. A practical course that maps well to real team workflows. Git-based collaboration assignments were a highlight.</p>
+          <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Agile</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Testing</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Git</span></div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;background:var(--bg2);margin-bottom:1rem;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.07em;margin-bottom:3px;">CS-6795 · Summer 2026</div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--text);">Intro to Cognitive Science</div>
+            </div>
+            <div style="flex-shrink:0;"><span style="color:var(--gold);font-size:12px;">● In progress</span></div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.75;margin:0.6rem 0 0.75rem;font-weight:300;">Currently taking. Covers perception, memory, reasoning, analogy, and mental models. The intersection with AI is constant and fascinating — especially structure-mapping theory and case-based reasoning. I'm running an experiment on algorithmic ordering and belief misattribution as the term project.</p>
+          <p style="margin-top:0.5rem;"><span onclick="nav('experiment')" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--purple);cursor:pointer;border-bottom:1px solid var(--border);padding-bottom:1px;">&#9654; Read the experiment write-up</span></p>
+          <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Cognition</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">AI</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Mental Models</span></div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;background:var(--bg2);margin-bottom:1rem;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.07em;margin-bottom:3px;">CS-6440 · Fall 2026</div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--text);">Intro to Health Informatics</div>
+            </div>
+            <div style="flex-shrink:0;"><span style="color:var(--muted);font-size:12px;">○ Upcoming</span></div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.75;margin:0.6rem 0 0.75rem;font-weight:300;">Upcoming. Covers EHR systems, health data standards (HL7, FHIR), and clinical decision support. The application of CS to healthcare is an area I'm genuinely curious about.</p>
+          <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Healthcare</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">FHIR</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Data</span></div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;background:var(--bg2);margin-bottom:1rem;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.07em;margin-bottom:3px;">CS-7637 · Upcoming</div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--text);">Knowledge-Based AI</div>
+            </div>
+            <div style="flex-shrink:0;"><span style="color:var(--muted);font-size:12px;">○ Upcoming</span></div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.75;margin:0.6rem 0 0.75rem;font-weight:300;">On my list. Covers cognitive systems, case-based reasoning, and knowledge representation. Builds directly on cognitive science foundations.</p>
+          <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">KBAI</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Reasoning</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:var(--purple-xlight);color:var(--purple);border:1px solid var(--border);margin-right:5px;margin-bottom:4px;display:inline-block;">Cognition</span></div>
+        </div>
+    </div>
+
+    <!-- EXPERIMENT -->
+    <div class="section" id="section-experiment">
+      <div class="sec-header">
+        <div class="sec-kicker">Research · Cognitive Science</div>
+        <div class="sec-title">The experiment</div>
+        <div class="sec-desc">A study on algorithmic ordering, belief revision, and why we misremember what changed our minds.</div>
+      </div>
+
+      <!-- Content loaded from experiment.html -->
+      <div id="experiment-content" style="max-width:640px;">
+        <div id="experiment-loading" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);">Loading...</div>
       </div>
     </div>
 
@@ -554,62 +691,55 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 </div>
 
 <script>
-const BODIES = {};
-let _id = 0;
-function mkp(body){ const id='p'+(_id++); BODIES[id]=body; return id; }
+const BODIES={};let _id=0;
+function mkp(b){const id='p'+(_id++);BODIES[id]=b;return id;}
 
-const DB = {
+const DB={
   programming:[
     {date:"2026-06-20",title:"Why Java's HashMap isn't thread-safe — and what to do instead",tag:"Java",
-     bid:mkp(`<p>Spent two hours tracking down a <code>ConcurrentModificationException</code> in production. Here's what I learned.</p>
+     bid:mkp(`<p>Spent two hours tracking down a <code>ConcurrentModificationException</code> in production.</p>
 <h2>The problem</h2>
 <p><code>HashMap</code> is not synchronized. Two threads modifying it simultaneously produces undefined behavior — sometimes an exception, sometimes silently corrupt data.</p>
-<h2>Three options, ranked</h2>
+<h2>Three options</h2>
 <ul>
 <li><strong>ConcurrentHashMap</strong> — best default. Fine-grained locking, high read throughput.</li>
 <li><strong>Collections.synchronizedMap()</strong> — wraps any map, but you must synchronize iteration manually.</li>
-<li><strong>Map.copyOf()</strong> — if you only read after initialization, immutability is the cleanest fix.</li>
+<li><strong>Map.copyOf()</strong> — if you only read after initialization, immutability is cleanest.</li>
 </ul>
 <pre><code>// Before
 Map&lt;String, Integer&gt; counts = new HashMap&lt;&gt;();
-
-// After — thread-safe
+// After
 Map&lt;String, Integer&gt; counts = new ConcurrentHashMap&lt;&gt;();</code></pre>
-<p>Default to <code>ConcurrentHashMap</code> whenever a map crosses thread boundaries. The performance cost is negligible; the correctness guarantee is not.</p>`)},
+<p>Default to <code>ConcurrentHashMap</code> whenever a map crosses thread boundaries.</p>`)},
     {date:"2026-05-14",title:"Python's mutable default arguments will bite you",tag:"Python",
      bid:mkp(`<p>A subtle Python gotcha that catches engineers coming from Java.</p>
 <pre><code>def append_to(item, lst=[]):
     lst.append(item)
     return lst
-
 append_to(1)  # [1]
 append_to(2)  # [1, 2]  not what you expected</code></pre>
-<p>Default arguments are evaluated once when the function is defined, not each call. The same list object is reused.</p>
+<p>Default arguments are evaluated once when the function is defined, not each call.</p>
 <h2>The fix</h2>
 <pre><code>def append_to(item, lst=None):
     if lst is None:
         lst = []
     lst.append(item)
     return lst</code></pre>
-<p>Use <code>None</code> as sentinel and initialize inside. Applies to any mutable default: lists, dicts, sets.</p>`)},
+<p>Use <code>None</code> as sentinel and initialize inside. Applies to any mutable default.</p>`)},
     {date:"2026-04-10",title:"Code reviews are a teaching tool, not a gatekeeping mechanism",tag:"Culture",
-     bid:mkp(`<p>Most code review cultures optimize for catching bugs. That's the wrong optimization.</p>
+     bid:mkp(`<p>Most code review cultures optimize for catching bugs. That is the wrong optimization.</p>
 <h2>What reviews are actually for</h2>
-<p>Bug-catching is a side effect. The real value is knowledge transfer — the reviewer learns the codebase change, the author learns how their code reads to someone else.</p>
-<p>When you review as a teacher rather than a gatekeeper, your comments change. Instead of "another approach could be," you write "here's why this matters."</p>
+<p>Bug-catching is a side effect. The real value is knowledge transfer. When you review as a teacher rather than a gatekeeper, your comments change. Instead of "this is wrong," you write "here is why this matters."</p>
 <h2>Practical changes</h2>
 <ul>
-<li>Ask questions instead of demands: "What happens if this is null?" not "Handle null here."</li>
+<li>Ask questions: "What happens if this is null?" not "Handle null here."</li>
 <li>Mark comments blocking or non-blocking explicitly.</li>
-<li>Approve when the code is correct, then leave suggestions as follow-ups.</li>
-</ul>
-<p>Reviews that feel collaborative get thoughtful responses. Reviews that feel adversarial get the minimum viable fix.</p>`)},
+<li>Approve when correct, then leave suggestions as follow-ups.</li>
+</ul>`)},
     {date:"2026-03-22",title:"The case against clever code",tag:"Practice",
      bid:mkp(`<p>The most dangerous line in any codebase is one that requires a comment to explain what it does.</p>
-<p>Clever code impresses nobody when it breaks at 2am. Code is read far more than it is written. Write for the engineer who'll maintain this in two years.</p>
 <pre><code>// Clever
 int r = (n &amp; (n-1)) == 0 ? n : Integer.highestOneBit(n) &lt;&lt; 1;
-
 // Clear
 boolean isPowerOfTwo = (n &amp; (n - 1)) == 0;
 int nextPower = isPowerOfTwo ? n : Integer.highestOneBit(n) &lt;&lt; 1;</code></pre>
@@ -618,26 +748,27 @@ int nextPower = isPowerOfTwo ? n : Integer.highestOneBit(n) &lt;&lt; 1;</code></
   bible:[
     {date:"2026-06-15",title:"Proverbs 4:7 — wisdom above everything",tag:"Proverbs",
      bid:mkp(`<div class="scripture-card"><div class="sc-mark">&ldquo;</div><div class="sc-text">Wisdom is the principal thing; therefore get wisdom: and with all thy getting get understanding.</div><div class="sc-ref">PROVERBS 4:7</div></div>
-<p>The framing here is striking. Wisdom is described as something you actively acquire — not something that arrives passively. The imperative is direct: <em>get</em> wisdom.</p>
-<p>The parallel with learning in software is hard to miss: understanding the <em>why</em> behind a pattern matters more than memorizing the pattern itself. Among everything worth pursuing, wisdom sits above the rest.</p>
-<p>There's also an economy implied: "with all thy getting." In a life full of things to pursue, this verse argues for intentional prioritization — not just intelligence or information, but wisdom that leads to right action.</p>`)},
+<p>Wisdom is described as something you actively acquire — not something that arrives passively. Among everything worth pursuing, wisdom sits above the rest.</p>
+<p>The parallel with learning in software: understanding the <em>why</em> behind a pattern matters more than memorizing the pattern itself.</p>`)},
     {date:"2026-05-28",title:"Romans 12:2 — renewing the mind",tag:"Romans",
      bid:mkp(`<div class="scripture-card"><div class="sc-mark">&ldquo;</div><div class="sc-text">Be transformed by the renewing of your mind, that you may prove what is that good and acceptable and perfect will of God.</div><div class="sc-ref">ROMANS 12:2</div></div>
-<p>Transformation isn't an event. It's a process of continuous revision. This landed differently after studying metacognition — how we examine our own thinking is itself a form of renewal.</p>
-<p>The passive construction matters: "be transformed," not "transform yourself." There's something that happens when you submit your mind to something larger than your current assumptions. That's distinct from self-improvement by willpower alone.</p>
-<p>The endpoint — proving "what is good and acceptable and perfect" — suggests the renewed mind gains a capacity for discernment. Not just changed behavior, but changed perception of what good actually is.</p>`)},
+<p>Transformation is a process of continuous revision, not a single event. The passive construction matters: "be transformed," not "transform yourself." Something happens when you submit your mind to something larger than your current assumptions.</p>`)},
     {date:"2026-04-11",title:"Ecclesiastes 3:1 — a time for everything",tag:"Ecclesiastes",
      bid:mkp(`<div class="scripture-card"><div class="sc-mark">&ldquo;</div><div class="sc-text">To every thing there is a season, and a time to every purpose under the heaven.</div><div class="sc-ref">ECCLESIASTES 3:1</div></div>
-<p>The passage lists opposites — a time to build, a time to tear down. Both are given equal standing. Demolishing something that no longer works is as valid as building something new.</p>
-<p>This applies directly to refactoring decisions. Sometimes the right move isn't to add more code — it's to remove what's no longer serving its purpose. The wisdom is in the timing, not just the action.</p>
-<p>There's also something quietly anti-anxious about this. Not everything needs to happen now. Everything has its moment.</p>`)}
+<p>Both building and tearing down are given equal standing. Demolishing something that no longer works is as valid as building something new. The wisdom is in the timing, not just the action.</p>`)}
   ],
   misc:[
+    {date:"2026-06-28",title:"You Think You Decided — the experiment",tag:"Research",
+     bid:mkp(`<p style="text-align:center;padding:1.5rem 0;">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);display:block;margin-bottom:0.75rem;letter-spacing:0.08em;">CS-6795 · COGNITIVE SCIENCE · SUMMER 2026</span>
+<span style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--text2);display:block;margin-bottom:1.25rem;">A study on algorithmic ordering, belief revision, and why we misremember what changed our minds.</span>
+<button id="go-experiment-btn" style="padding:8px 20px;border-radius:6px;border:1px solid var(--purple);background:var(--purple-xlight);color:var(--purple);font-family:'IBM Plex Mono',monospace;font-size:12px;cursor:pointer;">&#9654; Open experiment page</button>
+</p>`)},
     {date:"2026-06-10",title:"What my research on belief and algorithms found",tag:"Research",
-     bid:mkp(`<p>I ran a within-subjects study (n=55 after exclusions) examining whether the order search results appear in influences which sources people <em>think</em> shaped their beliefs — even when they believe they decided independently.</p>
+     bid:mkp(`<p>I ran a within-subjects study (n=55 after exclusions) examining whether the order search results appear in influences which sources people <em>think</em> shaped their beliefs.</p>
 <h2>The core finding</h2>
-<p>For topics with a clear credibility gradient (extraterrestrial life), participants who saw higher-credibility sources ranked first were significantly more likely to attribute belief change to those sources. The effect was weaker for topics where participants felt epistemically vigilant — like AI consciousness, where they seemed to distrust algorithmic curation more consciously.</p>
-<h2>What I'd do differently</h2>
+<p>For topics with a clear credibility gradient, participants who saw higher-credibility sources ranked first were significantly more likely to attribute belief change to those sources — regardless of actual reading time.</p>
+<h2>What I would do differently</h2>
 <ul>
 <li>Larger sample across more topic domains</li>
 <li>Eye-tracking to measure actual reading vs. attributed influence</li>
@@ -646,19 +777,16 @@ int nextPower = isPowerOfTwo ? n : Integer.highestOneBit(n) &lt;&lt; 1;</code></
     {date:"2026-03-05",title:"Notes on The Pragmatic Programmer",tag:"Books",
      bid:mkp(`<p>Re-read this after a year in production. Different book the second time.</p>
 <h2>What hit differently</h2>
-<p>The broken windows theory of codebases. I used to think it was metaphorical. It's not — I've watched quality degrade in real time once a team decides "good enough" is acceptable for one module. The rot spreads.</p>
-<p>The tracer bullets chapter is still the best framing I've found for why you should ship a thin end-to-end slice early rather than building layers in isolation.</p>
-<h2>One honest critique</h2>
-<p>The book assumes autonomy over your tooling and process. Some advice lands differently inside a large organization with legacy constraints.</p>`)},
+<p>The broken windows theory of codebases. Quality degrades in real time once a team decides "good enough" is acceptable for one module. The rot spreads.</p>
+<p>The tracer bullets chapter is the best framing I have found for why you should ship a thin end-to-end slice early rather than building layers in isolation.</p>`)},
     {date:"2026-01-20",title:"Building a search re-ranking system — what I learned",tag:"Projects",
      bid:mkp(`<p>Built a ranking algorithm combining PageRank, trust signals, and user interest scores: <code>FinalScore = α×PageRank + β×TrustScore + γ×InterestScore</code>.</p>
 <h2>The hard parts</h2>
-<p>Tuning α, β, and γ is less a mathematical problem and more a values problem. How much do you weight popularity vs. trustworthiness? That's a product decision, not an engineering one.</p>
-<p>Trust scores are also harder to define than they sound. Credibility is domain-dependent, time-dependent, and contested. Any proxy you choose encodes assumptions.</p>`)}
+<p>Tuning α, β, and γ is less a mathematical problem and more a values problem. How much do you weight popularity vs. trustworthiness? That is a product decision, not an engineering one.</p>`)}
   ]
 };
 
-let returnSec = 'home';
+let returnSec='home';
 
 function nav(sec){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
@@ -668,9 +796,25 @@ function nav(sec){
   if(el) el.classList.add('active');
   const nb=document.getElementById('nav-'+sec);
   if(nb) nb.classList.add('active');
-  const labels={home:'home',programming:'programming',bible:'bible study',misc:'everything else',about:'about',contact:'contact'};
+  const labels={home:'home',programming:'programming',bible:'bible study',misc:'everything else',about:'about',contact:'contact',omscs:'omscs · reviews',experiment:'experiment'};
   document.getElementById('bc-text').textContent=labels[sec]||sec;
   window.scrollTo(0,0);
+  if(sec==='experiment') loadExperiment();
+  if(sec==='about') setTimeout(render,30);
+}
+
+function loadExperiment(){
+  const wrap=document.getElementById('experiment-content');
+  if(!wrap||wrap.dataset.loaded) return;
+  fetch('experiment.html')
+    .then(r=>{if(!r.ok)throw new Error();return r.text();})
+    .then(data=>{
+      wrap.innerHTML='<div class="experiment-body">'+data+'</div>';
+      wrap.dataset.loaded='1';
+    })
+    .catch(()=>{
+      wrap.innerHTML='<p style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--muted);">Place experiment.html in the same folder as this file.</p>';
+    });
 }
 
 function openPost(bid,title,cat,date,from){
@@ -683,85 +827,31 @@ function openPost(bid,title,cat,date,from){
   document.getElementById('pv-body').innerHTML=BODIES[bid]||'';
   document.getElementById('bc-text').textContent=cat.toLowerCase()+' / post';
   window.scrollTo(0,0);
+  // wire up experiment button if present
+  const btn=document.getElementById('go-experiment-btn');
+  if(btn) btn.onclick=function(){closePost();setTimeout(()=>nav('experiment'),50);};
 }
 
-function closePost(){ nav(returnSec); }
-function toggleMob(){ document.getElementById('mobMenu').classList.toggle('open'); }
+function closePost(){nav(returnSec);}
+function toggleMob(){document.getElementById('mobMenu').classList.toggle('open');}
 
 function toggleTheme(){
   const h=document.documentElement;
   const dark=h.getAttribute('data-theme')==='dark';
   h.setAttribute('data-theme',dark?'light':'dark');
-  document.getElementById('th-icon').textContent=dark?'\u263D':'\u2600';
+  document.getElementById('th-icon').textContent=dark?'\u2600':'\u263D';
   document.getElementById('th-label').textContent=dark?'Let there be dark':'Let there be light';
+  setTimeout(render,50);
 }
 
 function row(p,catLabel,sec){
   const isGold=sec==='bible';
-  return `<div class="post-row" onclick="openPost('${p.bid}',${JSON.stringify(p.title)},${JSON.stringify(catLabel)},${JSON.stringify(p.date)},${JSON.stringify(sec)})">
-    <div class="post-date">${p.date}</div>
-    <div class="post-right">
-      <div class="post-title">${p.title}</div>
-      <span class="post-tag${isGold?' gold':''}">${p.tag}</span>
-    </div>
-  </div>`;
-}
-
-function sendMessage(){
-  const name = document.getElementById('cf-name').value.trim();
-  const email = document.getElementById('cf-email').value.trim();
-  const subject = document.getElementById('cf-subject').value.trim();
-  const message = document.getElementById('cf-message').value.trim();
-  const status = document.getElementById('cf-status');
-  const btn = document.getElementById('cf-btn');
-
-  if(!name || !email || !message){
-    status.style.display='block';
-    status.style.background='var(--gold-bg)';
-    status.style.border='1px solid var(--gold-border)';
-    status.style.color='var(--gold)';
-    status.textContent='Please fill in your name, email, and message.';
-    return;
-  }
-
-  btn.textContent='Sending...';
-  btn.style.opacity='0.6';
-  btn.disabled=true;
-
-  // Use Formspree to forward to email without exposing address
-  fetch('https://formspree.io/f/xvgrdlkg', {
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({name,email,subject,message})
-  })
-  .then(r=>r.json())
-  .then(data=>{
-    if(data.ok){
-      status.style.display='block';
-      status.style.background='#0a1f0a';
-      status.style.border='1px solid #1a4a1a';
-      status.style.color='#6ee7b7';
-      status.textContent='Message sent! I\'ll get back to you soon.';
-      document.getElementById('cf-name').value='';
-      document.getElementById('cf-email').value='';
-      document.getElementById('cf-subject').value='';
-      document.getElementById('cf-message').value='';
-    } else {
-      throw new Error('Send failed');
-    }
-  })
-  .catch(()=>{
-    status.style.display='block';
-    status.style.background='var(--gold-bg)';
-    status.style.border='1px solid var(--gold-border)';
-    status.style.color='var(--gold)';
-    status.textContent='Something went wrong. Try emailing me directly via LinkedIn.';
-  })
-  .finally(()=>{
-    btn.textContent='Send message';
-    btn.style.opacity='1';
-    btn.disabled=false;
-  });
+  return '<div class="post-row" onclick="openPost(\''+p.bid+'\','+JSON.stringify(p.title)+','+JSON.stringify(catLabel)+','+JSON.stringify(p.date)+','+JSON.stringify(sec)+')">'+
+    '<div class="post-date">'+p.date+'</div>'+
+    '<div class="post-right">'+
+      '<div class="post-title">'+p.title+'</div>'+
+      '<span class="post-tag'+(isGold?' gold':'')+'">'+p.tag+'</span>'+
+    '</div></div>';
 }
 
 function init(){
@@ -770,7 +860,6 @@ function init(){
     ...DB.bible.map(p=>({...p,sec:'bible',catLabel:'Bible study'})),
     ...DB.misc.map(p=>({...p,sec:'misc',catLabel:'Everything else'}))
   ].sort((a,b)=>b.date.localeCompare(a.date));
-
   document.getElementById('home-list').innerHTML=all.slice(0,6).map(p=>row(p,p.catLabel,p.sec)).join('');
   document.getElementById('prog-list').innerHTML=DB.programming.map(p=>row(p,'Programming','programming')).join('');
   document.getElementById('bible-list').innerHTML=DB.bible.map(p=>row(p,'Bible study','bible')).join('');
