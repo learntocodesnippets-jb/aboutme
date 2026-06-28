@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>You Think You Decided</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--sidebar-w:260px;--transition:0.2s ease;}
+[data-theme="light"]{
+  --bg:#fdfcff;
+  --bg2:#f7f4ff;
+  --bg3:#ede8fb;
+  --border:#e0d9f5;
+  --border2:#c9bff0;
+  --text:#0d0a18;
+  --text2:#3d3558;
+  --muted:#7a6e9a;
+  --purple:#5b3fa6;
+  --purple-light:#7c5cbf;
+  --purple-xlight:#ede8fb;
+  --gold:#96700a;
+  --gold-light:#c49a1a;
+  --gold-bg:#fdf6e3;
+  --gold-border:#e8d080;
+  --sb-bg:#0f0d14;
+  --sb-text:#ede8ff;
+  --sb-muted:#6b6280;
+  --sb-border:#1e1c2e;
+  --sb-hover:#1a1726;
+  --sb-active:#c49a1a;
+  --sb-active-bg:#1e1c2e;
+  --code-bg:#1a1530;
+  --code-text:#c4b5fd;
+  --code-green:#6ee7b7;
+  --code-yellow:#fde68a;
+  --code-blue:#93c5fd;
+  --code-comment:#6b7280;
+  --hero-quote:#ede8fb;
+}
+[data-theme="dark"]{
+  --bg:#0b0917;
+  --bg2:#13102a;
+  --bg3:#1c1838;
+  --border:#2e2850;
+  --border2:#4a4278;
+  --text:#f0ecff;
+  --text2:#c8bef0;
+  --muted:#9d92c0;
+  --purple:#b8a0f0;
+  --purple-light:#d0bcff;
+  --purple-xlight:#2a2448;
+  --gold:#e8bb30;
+  --gold-light:#f5d050;
+  --gold-bg:#251d08;
+  --gold-border:#6a5010;
+  --sb-bg:#080710;
+  --sb-text:#ede8ff;
+  --sb-muted:#5a5470;
+  --sb-border:#110e20;
+  --sb-hover:#111020;
+  --sb-active:#d4a820;
+  --sb-active-bg:#161428;
+  --code-bg:#0d0b18;
+  --code-text:#c4b5fd;
+  --code-green:#6ee7b7;
+  --code-yellow:#fde68a;
+  --code-blue:#93c5fd;
+  --code-comment:#4b5563;
+  --hero-quote:#110e20;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;transition:background var(--transition),color var(--transition);}
+
+/* ── SIDEBAR ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;transition:background var(--transition),color var(--transition);}
+.layout{display:flex;min-height:100vh;}
+.sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--sb-bg);border-right:1px solid var(--sb-border);padding:0;position:fixed;top:0;left:0;bottom:0;display:flex;flex-direction:column;z-index:50;}
+.sb-top{padding:2rem 1.5rem 1.5rem;border-bottom:1px solid var(--sb-border);}
+.sb-avatar{width:52px;height:52px;border-radius:50%;border:2px solid var(--sb-active);background:#1a1530;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:500;color:var(--sb-active);margin-bottom:12px;overflow:hidden;padding:0;}
+.sb-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.sb-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--sb-text);margin-bottom:4px;}
+.sb-role{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--sb-muted);line-height:1.5;}
+.sb-nav{padding:1.25rem 1rem;flex:1;}
+.nav-label{font-size:9px;font-weight:600;color:var(--sb-active);letter-spacing:0.12em;text-transform:uppercase;padding:0 0.5rem;margin-bottom:6px;}
+.nav-btn{display:flex;align-items:center;gap:10px;width:100%;padding:8px 12px;border-radius:6px;font-size:13px;font-family:'Inter',sans-serif;font-weight:500;color:var(--sb-text);background:none;border:none;cursor:pointer;text-align:left;transition:all 0.15s;opacity:0.72;text-decoration:none;}
+.nav-btn:hover{background:var(--sb-hover);color:var(--sb-text);opacity:1;}
+.nav-btn.active{background:var(--sb-active-bg);color:var(--sb-active);opacity:1;font-weight:600;}
+.nav-sep{margin:12px 0;border:none;border-top:1px solid var(--sb-border);}
+.sb-footer{padding:1.25rem 1.5rem;border-top:1px solid var(--sb-border);margin-top:auto;}
+.sb-links{display:flex;gap:14px;margin-bottom:8px;}
+.sb-links a{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--sb-muted);text-decoration:none;}
+.sb-links a:hover{color:var(--sb-active);}
+.sb-built{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#3a3555;}
+.main{margin-left:var(--sidebar-w);flex:1;}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:0.875rem 2.5rem;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:10;transition:background var(--transition);}
+.breadcrumb{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text2);}
+.breadcrumb .bc-accent{color:var(--purple);}
+.theme-btn{display:flex;align-items:center;gap:6px;padding:5px 14px;border-radius:20px;border:1px solid var(--border2);background:var(--bg2);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);cursor:pointer;transition:all 0.15s;}
+.theme-btn:hover{border-color:var(--purple);color:var(--purple);}
+.content{padding:3rem 2.5rem;max-width:720px;}
+/* experiment body styles */
+.back-link{display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.15s;}
+.back-link:hover{color:var(--purple);}
+.exp-kicker{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;}
+.exp-title{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;line-height:1.1;color:var(--text);margin-bottom:0.75rem;}
+.exp-title em{font-style:italic;color:var(--purple-light);}
+.exp-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);padding-bottom:1.5rem;border-bottom:1px solid var(--border);margin-bottom:2rem;}
+.experiment-body h2{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--text);margin:2rem 0 0.6rem;}
+.experiment-body p{font-size:15px;line-height:1.9;color:var(--text2);font-weight:300;margin-bottom:1.1rem;}
+.experiment-body em{color:var(--purple-light);font-style:italic;}
+.experiment-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:0.06em;margin-bottom:1.5rem!important;}
+.experiment-note{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:1.5rem 0;}
+.stat-card{border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;background:var(--bg2);}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--purple);line-height:1;margin-bottom:4px;}
+.stat-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;}
+@media(max-width:768px){.sidebar{display:none;}.main{margin-left:0;}.content{padding:1.5rem 1.25rem;}.exp-title{font-size:1.75rem;}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sb-top">
+      <div class="sb-avatar"><img src="jb.jpg" alt="Joshna"/></div>
+      <div class="sb-name">Joshna</div>
+      <div class="sb-role">Scripture · Code · Ideas</div>
+    </div>
+    <div class="sb-nav">
+      <div class="nav-label">Sections</div>
+      <a class="nav-btn" href="index.html">&#8962; Home</a>
+      <a class="nav-btn" href="index.html#programming">&#10100; Programming</a>
+      <a class="nav-btn" href="index.html#bible">&#10022; Bible study</a>
+      <a class="nav-btn" href="index.html#misc">&#9782; Everything else</a>
+      <a class="nav-btn active" href="experiment.html">&#9883; Experiment</a>
+      <a class="nav-btn" href="index.html#omscs">&#127979; OMSCS Reviews</a>
+      <hr class="nav-sep"/>
+      <div class="nav-label">Links</div>
+      <a class="nav-btn" href="index.html#about">&#9737; About me</a>
+      <a class="nav-btn" href="index.html#contact">&#9993; Contact</a>
+    </div>
+    <div class="sb-footer">
+      <div class="sb-links">
+        <a href="https://www.linkedin.com/in/joshnabhonsle/" target="_blank">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">RSS</a>
+      </div>
+      <div class="sb-built">jekyll + chirpy</div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="breadcrumb"><span class="bc-accent">~/</span>experiment</div>
+      <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span id="th-icon">&#9790;</span>
+        <span id="th-label">Let there be dark</span>
+      </button>
+    </div>
+    <div class="content">
+      <a class="back-link" href="index.html">&#8592; back to home</a>
+      <div class="exp-kicker">CS-6795 · Cognitive Science · Georgia Tech OMSCS</div>
+      <h1 class="exp-title">You Think You <em>Decided</em></h1>
+      <div class="exp-meta">Algorithmic Ordering &amp; the Metacognitive Gap in Belief Revision · Summer 2026</div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-num">55</div><div class="stat-label">Valid responses</div></div>
+        <div class="stat-card"><div class="stat-num">82.8%</div><div class="stat-label">Revised beliefs</div></div>
+        <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Topics studied</div></div>
+        <div class="stat-card"><div class="stat-num">AF=1.0</div><div class="stat-label">Full misattribution</div></div>
+      </div>
+
+      <div class="experiment-body">
+        <article>
+
+  <h2>You Think You Decided</h2>
+  <p class="experiment-meta">CS-6795 · Cognitive Science · Summer 2026</p>
+
+  <p>
+    We make decisions constantly — what to read, what to believe, what to trust. 
+    But how much of that is really <em>us</em> deciding, and how much is shaped by 
+    the order things appear in front of us?
+  </p>
+
+  <p>
+    This experiment looks at a specific question: when people read a list of sources 
+    on a contested topic and later revise their beliefs, do they correctly identify 
+    <em>which</em> sources actually moved them — or do they misattribute influence 
+    to whichever source appeared first?
+  </p>
+
+  <h2>The Setup</h2>
+  <p>
+    Participants were shown three contested topics — extraterrestrial life, lab-grown food, 
+    and AI consciousness. For each topic, they saw a ranked list of sources (ordered by 
+    credibility, popularity, or reverse popularity) and answered belief questions before 
+    and after reading.
+  </p>
+  <p>
+    The key variable wasn't <em>what</em> they read — it was <em>where</em> the sources 
+    appeared in the list. Did position alone predict misattribution?
+  </p>
+
+  <h2>What I Found</h2>
+  <p>
+    Across 55 valid responses, 82.8% of participants revised their beliefs after reading. 
+    But nearly all of them attributed that change to whichever source was ranked highest — 
+    regardless of whether they spent meaningful time on it.
+  </p>
+  <p>
+    The effect was strongest for topics where participants felt less epistemically 
+    confident (aliens, lab-grown food) and weakest where they felt the topic was 
+    contested by design (AI consciousness).
+  </p>
+
+  <h2>Why It Matters</h2>
+  <p>
+    Search engines, news feeds, and recommendation systems all make ordering decisions. 
+    If position alone shapes both belief revision <em>and</em> the story we tell ourselves 
+    about why we changed our minds, then the gap between what we think we decided and 
+    what actually influenced us is larger than we assume.
+  </p>
+  <p>
+    That gap is what this experiment is trying to measure.
+  </p>
+
+  <p class="experiment-note">
+    Full report under review · Summer 2026 · Georgia Tech OMSCS
+  </p>
+
+</article>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('th-icon').textContent=dark?'\u2600':'\u263D';
+  document.getElementById('th-label').textContent=dark?'Let there be dark':'Let there be light';
+}
+</script>
+</body>
+</html>
