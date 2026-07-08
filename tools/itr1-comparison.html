@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Simple ITR-1 Tax Calculator FY2026-27</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:1000px;margin:auto;padding:20px;background:#fffbe8}
+fieldset{margin:10px 0;background:#f7f0ff;border:1px solid #d7c4ff;padding:10px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #bbb;padding:6px}input{width:120px}
+th{background:#eee}
+</style></head><body>
+<h2 style='color:#6a3fb5'>Offline ITR-1 Tax Comparison (Illustrative)</h2><div style='background:#fff3b8;border:1px solid #e6d37a;padding:10px;margin-bottom:12px'>This calculator is intended for <b>ITR-1 (Sahaj)</b> taxpayers only. It is an offline planning tool for comparing the Old and New Tax Regimes. Results are illustrative and should be verified with the Income Tax Department portal before filing.</div><div style='text-align:right;color:#6a3fb5'><b>Author: @joshnabhonsle</b></div>
+<p>Old vs New Regime • FY2026-27 • Offline only</p>
+
+<fieldset><legend>Income</legend>
+Salary <input id=g type=number value=350000><br><br>
+Other Income <input id=o type=number value=35000>
+</fieldset>
+
+<fieldset><legend>Deductions</legend>
+Section24(b)<input id=hp type=number value=200000>
+80C<input id=c80 type=number value=150000>
+80CCD(1B)<input id=nps type=number value=50000><br><br>
+80CCD(2)<input id=nps2 type=number value=0>
+80D<input id=d80 type=number value=12000>
+80TTA<input id=tta type=number value=10000><br><br>
+80E<input id=e80 type=number value=0>
+80EE<input id=ee80 type=number value=0>
+80EEA<input id=eea80 type=number value=0>
+80G<input id=g80 type=number value=0>
+Other<input id=other type=number value=0>
+</fieldset>
+
+<fieldset><legend>Taxes Paid</legend>
+TDS Salary<input id=tdss type=number value=0>
+TDS Other<input id=tdso type=number value=0>
+Advance<input id=adv type=number value=0>
+Self Assessment<input id=sa type=number value=0>
+</fieldset>
+
+<button onclick="calc()">Calculate</button>
+<button type="button" onclick="location.reload()">Reset</button>
+
+<h3>Summary</h3>
+<table>
+<tr><th>Item</th><th>Old</th><th>New</th></tr>
+<tr><td>Gross Total Income</td><td id=go></td><td id=gn></td></tr>
+<tr><td>Total Deductions</td><td id=do1></td><td id=dn1></td></tr>
+<tr><td>Taxable Income</td><td id=to></td><td id=tn></td></tr>
+<tr><td>Income Tax</td><td id=it1></td><td id=it2></td></tr>
+<tr><td>87A Rebate</td><td id=rb1></td><td id=rb2></td></tr>
+<tr><td>Tax after Rebate</td><td id=ta1></td><td id=ta2></td></tr>
+<tr><td>Cess (4%)</td><td id=cs1></td><td id=cs2></td></tr>
+<tr><td>Total Tax</td><td id=tt1></td><td id=tt2></td></tr>
+<tr><td>Taxes Paid</td><td id=tp1></td><td id=tp2></td></tr>
+<tr><td>Refund(-)/Payable(+)</td><td id=rf1></td><td id=rf2></td></tr>
+</table>
+<h3 id=rec style='color:green'></h3>
+
+<script>
+const F=n=>"₹"+Math.round(n).toLocaleString("en-IN");
+function slabOld(x){let t=0;if(x>250000)t+=Math.min(x,500000)-250000>0?(Math.min(x,500000)-250000)*.05:0;
+if(x>500000)t+=(Math.min(x,1000000)-500000)*.2;
+if(x>1000000)t+=(x-1000000)*.3;return Math.max(0,t);}
+function slabNew(x){let s=[[400000,0],[800000,.05],[1200000,.1],[1600000,.15],[2000000,.2],[2400000,.25],[1e15,.3]],p=0,t=0;
+for(let a of s){if(x<=p)break;let inc=Math.min(x,a[0])-p;t+=inc*a[1];p=a[0];}return t;}
+function calc(){
+let sal=+g.value,otherInc=+o.value;
+let grossOld=Math.max(0,sal-50000+otherInc);
+let grossNew=Math.max(0,sal-75000+otherInc);
+let oldDed=Math.min(+hp.value,200000)+Math.min(+c80.value,150000)+Math.min(+nps.value,50000)+(+d80.value)+Math.min(+tta.value,10000)+(+e80.value)+(+ee80.value)+(+eea80.value)+(+g80.value)+(+nps2.value)+(+other.value);
+let newDed=+nps2.value;
+let oldTaxable=Math.max(0,grossOld-oldDed),newTaxable=Math.max(0,grossNew-newDed);
+let ot=slabOld(oldTaxable),nt=slabNew(newTaxable);
+let or=(oldTaxable<=500000)?ot:0,nr=(newTaxable<=1200000)?nt:0;
+ot-=or;nt-=nr;
+let oc=ot*.04,nc=nt*.04,totalOld=ot+oc,totalNew=nt+nc;
+let paid=+tdss.value+ +tdso.value+ +adv.value+ +sa.value;
+go.innerText=F(grossOld);gn.innerText=F(grossNew);
+do1.innerText=F(oldDed);dn1.innerText=F(newDed);
+to.innerText=F(oldTaxable);tn.innerText=F(newTaxable);
+it1.innerText=F(ot+or);it2.innerText=F(nt+nr);
+rb1.innerText=F(or);rb2.innerText=F(nr);
+ta1.innerText=F(ot);ta2.innerText=F(nt);
+cs1.innerText=F(oc);cs2.innerText=F(nc);
+tt1.innerText=F(totalOld);tt2.innerText=F(totalNew);
+tp1.innerText=F(paid);tp2.innerText=F(paid);
+rf1.innerText=F(totalOld-paid);rf2.innerText=F(totalNew-paid);
+rec.innerText=totalOld<totalNew?"Recommended: OLD (Save "+F(totalNew-totalOld)+")":"Recommended: NEW (Save "+F(totalOld-totalNew)+")";
+}
+calc();
+</script></body></html>
