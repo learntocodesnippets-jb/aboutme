@@ -706,21 +706,56 @@ function mkp(b){const id='p'+(_id++);BODIES[id]=b;return id;}
 
 const DB={
   programming:[
-    {date:"2026-06-20",title:"Why Java's HashMap isn't thread-safe — and what to do instead",tag:"Java",
-     bid:mkp(`<p>Spent two hours tracking down a <code>ConcurrentModificationException</code> in production.</p>
-<h2>The problem</h2>
-<p><code>HashMap</code> is not synchronized. Two threads modifying it simultaneously produces undefined behavior — sometimes an exception, sometimes silently corrupt data.</p>
-<h2>Three options</h2>
-<ul>
-<li><strong>ConcurrentHashMap</strong> — best default. Fine-grained locking, high read throughput.</li>
-<li><strong>Collections.synchronizedMap()</strong> — wraps any map, but you must synchronize iteration manually.</li>
-<li><strong>Map.copyOf()</strong> — if you only read after initialization, immutability is cleanest.</li>
-</ul>
-<pre><code>// Before
-Map&lt;String, Integer&gt; counts = new HashMap&lt;&gt;();
-// After
-Map&lt;String, Integer&gt; counts = new ConcurrentHashMap&lt;&gt;();</code></pre>
-<p>Default to <code>ConcurrentHashMap</code> whenever a map crosses thread boundaries.</p>`)},
+    {{
+  date:"2026-07-08",
+  title:"ITR1 Old vs New Comparison Calculator",
+  tag:"Tool",
+  bid:mkp(`
+    <p>
+      A simple offline calculator to compare the
+      <strong>Old</strong> and <strong>New</strong>
+      Income Tax Regimes for <strong>ITR-1 (Sahaj)</strong> taxpayers.
+    </p>
+
+    <h2>Features</h2>
+    <ul>
+      <li>Old vs New regime comparison</li>
+      <li>Automatic standard deduction</li>
+      <li>Common deductions (80C, NPS, 80D, etc.)</li>
+      <li>Section 87A rebate</li>
+      <li>Health & Education Cess</li>
+      <li>Refund / Tax payable calculation</li>
+      <li>Works completely offline</li>
+    </ul>
+
+    <p style="margin-top:1.5rem;">
+      <a
+        href="tools/itr1-comparison.html"
+        target="_blank"
+        style="
+          display:inline-block;
+          padding:10px 18px;
+          border-radius:6px;
+          border:1px solid var(--border);
+          background:var(--purple-xlight);
+          color:var(--purple);
+          text-decoration:none;
+          font-family:'IBM Plex Mono',monospace;
+          font-size:12px;
+        ">
+        🧮 Launch Calculator
+      </a>
+    </p>
+
+    <p style="
+      margin-top:1rem;
+      font-size:12px;
+      color:var(--muted);
+      font-family:'IBM Plex Mono',monospace;">
+      Author: @joshnabhonsle
+    </p>
+  `)
+},
     {date:"2026-05-14",title:"Python's mutable default arguments will bite you",tag:"Python",
      bid:mkp(`<p>A subtle Python gotcha that catches engineers coming from Java.</p>
 <pre><code>def append_to(item, lst=[]):
